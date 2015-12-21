@@ -14,15 +14,15 @@ module.exports = function (app) {
 	})
 
 
-	// app.get('/apicall', function (req, res) {
-	// 	request('https://api.wunderground.com/api/' + config.apiKey + '/conditions/q/97203.json', function (error, response, body) {
+	app.get('/apicall', function (req, res) {
+		request('https://api.wunderground.com/api/' + config.apiKey + '/conditions/q/97203.json', function (error, response, body) {
+				res.send(JSON.parse(body));
+		})
+				
 
-	// 	})
-	// 			res.send(body);
+	})
 
-	// })
-
-	
+	/*
 	app.get('/apicall', function (req, res) {
 		var data = '';
 		var apicall = https.get('https://api.wunderground.com/api/' + config.apiKey + '/conditions/q/97203.json', function (response) {
@@ -35,8 +35,7 @@ module.exports = function (app) {
 			})
 		})
 	})
-
-
+*/
 }
 
 
