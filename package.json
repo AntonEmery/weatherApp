@@ -1,0 +1,17 @@
+{
+  "name": "angularweatherapp",
+  "version": "1.0.0",
+  "description": "shows current and 3 day weather forecast based on zip code",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "https": "^1.0.0",
+    "request": "2.67.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Anton Emery",
+  "license": "ISC"
+}
