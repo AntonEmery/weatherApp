@@ -1,0 +1,13 @@
+<div>
+	<div ng-repeat="day in futureDays" class="col-md-4 well">
+			<div class="row">
+				<div class="col-xs-9">
+				<img ng-src="{{day.icon_url}}" />
+				<p>{{day.date.weekday}}</p>	
+				</div>
+				<div class="col-xs-3">
+				<span>{{day.avetemp}} </span>
+				</div>			
+			</div>
+	</div>
+</div>

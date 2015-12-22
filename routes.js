@@ -9,18 +9,26 @@ module.exports = function (app) {
 		res.sendFile(__dirname + '/public/index.html');
 	})
 
-	app.get('/home', function (req,res) {
-		res.send('Home page');
-	})
-
-
-	app.get('/apicall', function (req, res) {
+	app.get('/getTempToday', function (req, res) {
 		request('https://api.wunderground.com/api/' + config.apiKey + '/conditions/q/97203.json', function (error, response, body) {
 				res.send(JSON.parse(body));
 		})
-				
-
 	})
+
+	app.get('/getState', function (req, res) {
+		request('https://api.wunderground.com/api/' + config.apiKey + '/geolookup/q/97203.json', function (error, response, body) {
+			res.send(JSON.parse(body));
+		})
+	})
+
+	app.get('/getWeather', function (req, res) {
+		request('https://api.wunderground.com/api/' + config.apiKey + '/forecast/q/97203.json', function (error, response, body) {
+			res.send(JSON.parse(body));
+		})
+	})
+}			
+
+	
 
 	/*
 	app.get('/apicall', function (req, res) {
@@ -36,7 +44,7 @@ module.exports = function (app) {
 		})
 	})
 */
-}
+
 
 
 

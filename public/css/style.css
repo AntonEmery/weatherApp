@@ -1,0 +1,39 @@
+body {
+	padding: 1%;
+}
+
+.container {
+	max-width: 1200px;
+	margin-top: 3%;
+}
+
+#input {
+	text-align: center;
+}
+
+#footer {
+	background-color: #f5f5f5;
+}
+
+#footer span {
+	margin-right: 3%;
+}
+
+#footer img {
+	display: inline;
+}
+
+.col-md-4 {
+	text-align: center;
+}
+
+#current-day {
+	text-align: center;
+}
+
+@media (max-width: 991px) {
+	.col-xs-9 p {
+		display: inline;
+	}
+}
+

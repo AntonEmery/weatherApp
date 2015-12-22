@@ -1,0 +1,22 @@
+<div>	
+	<div class="row well" ng-if="state">
+		<div id="current-day" class="col-md-12">
+				<p>{{city}}, {{state}}</p>
+			<div class="row">
+				<div class="col-xs-4">
+					<p>Today</p>
+				</div>
+				<div class="col-xs-4">
+					<img ng-src="{{currentDay.icon_url}}" />		
+				</div>
+				<div class="col-xs-4">		
+					<p>{{temp}}</p>
+					<span>{{currentDay.conditions}}</span>
+				</div>
+			</div>				
+		</div>
+	</div>
+	<div class="row">
+		<display-day></display-day>	
+	</div>
+</div>
