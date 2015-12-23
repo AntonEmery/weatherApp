@@ -29,14 +29,14 @@ angular.module('weatherApp', [])
 .service('weatherService', function($http) {
 
 	this.getTempToday = function(zipcode) {
-		return $http({method: 'GET', url: '/getTempToday', params: {test: zipcode} });	
+		return $http({method: 'GET', url: '/getTempToday', params: {zip: zipcode} });	
 	}
 	this.getWeather = function(zipcode) {
-		return $http({method: 'GET', url: '/getWeather', params: {test: zipcode} });	
+		return $http({method: 'GET', url: '/getWeather', params: {zip: zipcode} });	
 	}
 
 	this.getState = function(zipcode) {
-		return $http({method: 'GET', url: '/getState', params: {test: zipcode} });
+		return $http({method: 'GET', url: '/getState', params: {zip: zipcode} });
 	}
 })
 .directive('displayWeather', function() {
