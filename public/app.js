@@ -1,6 +1,7 @@
 angular.module('weatherApp', [])
 .controller('mainCtrl', function($scope, weatherService) {
 	$scope.submitZip = function(zipcode) {
+		console.log(zipcode);
 		weatherService.getWeather(zipcode).success(function(data) {
 			console.log('Current and next 3 days weather');
 			console.log(data);
@@ -28,14 +29,14 @@ angular.module('weatherApp', [])
 .service('weatherService', function($http) {
 
 	this.getTempToday = function(zipcode) {
-		return $http({method: 'GET', url: 'http://api.wunderground.com/api/80a03450e229a874/conditions/q/' + zipcode + '.json'});	
+		return $http({method: 'GET', url: '/getTempToday', params: {zip: zipcode} });	
 	}
 	this.getWeather = function(zipcode) {
-		return $http({method: 'GET', url: 'http://api.wunderground.com/api/80a03450e229a874/forecast/q/' + zipcode + '.json'});	
+		return $http({method: 'GET', url: '/getWeather', params: {zip: zipcode} });	
 	}
 
 	this.getState = function(zipcode) {
-		return $http({method: 'GET', url: 'http://api.wunderground.com/api/80a03450e229a874/geolookup/q/' + zipcode + '.json'});
+		return $http({method: 'GET', url: '/getState', params: {zip: zipcode} });
 	}
 })
 .directive('displayWeather', function() {

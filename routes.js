@@ -10,19 +10,19 @@ module.exports = function (app) {
 	})
 
 	app.get('/getTempToday', function (req, res) {
-		request('https://api.wunderground.com/api/' + config.apiKey + '/conditions/q/97203.json', function (error, response, body) {
+		request('https://api.wunderground.com/api/' + config.apiKey + '/conditions/q/' + zip + '.json', function (error, response, body) {
 				res.send(JSON.parse(body));
 		})
 	})
 
 	app.get('/getState', function (req, res) {
-		request('https://api.wunderground.com/api/' + config.apiKey + '/geolookup/q/97203.json', function (error, response, body) {
+		request('https://api.wunderground.com/api/' + config.apiKey + '/geolookup/q/' + zip + '.json', function (error, response, body) {
 			res.send(JSON.parse(body));
 		})
 	})
 
 	app.get('/getWeather', function (req, res) {
-		request('https://api.wunderground.com/api/' + config.apiKey + '/forecast/q/97203.json', function (error, response, body) {
+		request('https://api.wunderground.com/api/' + config.apiKey + '/forecast/q/' + zip + '.json', function (error, response, body) {
 			res.send(JSON.parse(body));
 		})
 	})
