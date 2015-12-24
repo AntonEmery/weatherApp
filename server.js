@@ -9,6 +9,6 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-app.listen(8033, function() {
+app.listen(process.env.PORT || 8033, function() {
 	console.log('Server running in port 8033');
 });
