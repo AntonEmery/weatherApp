@@ -1,2 +1,2 @@
 # weatherApp
-Shows weather forecast based on zip. Uses Angular and Node
+Pulls from weather API to show current and three day forecast based on zipcode. Uses Angular and Node
